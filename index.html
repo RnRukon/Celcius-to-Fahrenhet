@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Celcius to Fahrenhet</title>
+
+    <style>
+        body {
+            height: 100vh;
+            background-color: rgb(0, 0, 61);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        div {
+            border: 2px solid springgreen;
+            padding: 20px;
+        }
+
+        h2 {
+            color: darkorange;
+            font-size: 1.5rem;
+        }
+
+        p {
+            color: deeppink;
+        }
+
+
+        #c::placeholder {
+            color: rgb(238, 255, 0);
+        }
+
+        #f::placeholder {
+            color: rgb(0, 255, 64);
+        }
+
+        input {
+            width: 400px;
+            height: 30px;
+            background-color: rgba(0, 255, 149, 0.61);
+            border-style: none;
+            font-size: 25px;
+            color: yellow;
+
+        }
+
+        .Celsius,
+        #Celsius {
+            color: tomato;
+        }
+
+        .Fahrenheit,
+        #Fahrenheit {
+            color: yellow;
+        }
+
+        @media only screen and (max-width: 600px) {
+
+            h2 {
+                color: darkorange;
+                font-size: 1.3rem;
+            }
+
+            input {
+                width: 300px;
+                height: 30px;
+                background-color: rgba(0, 255, 149, 0.61);
+                border-style: none;
+                font-size: 20px;
+                color: yellow;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+
+        <h2>Celsius to Fahrenheit</h2>
+
+        <p>Insert a number into one of the input fields below:</p>
+
+        <p id="Celsius"><input class="Celsius" id="c" onkeyup="convert('C')" placeholder="Celsius"> degrees Celsius</p>
+
+        <p id=Fahrenheit><input class="Fahrenheit" id="f" onkeyup="convert('F')" placeholder="Fahrenheit"> degrees
+            Fahrenheit</p>
+    </div>
+
+
+    <script>
+        function convert(degree) {
+            var x;
+            if (degree == "C") {
+                x = document.getElementById("c").value * 9 / 5 + 32;
+                document.getElementById("f").value = Math.round(x);
+            } else {
+                x = (document.getElementById("f").value - 32) * 5 / 9;
+                document.getElementById("c").value = Math.round(x);
+            }
+        }
+    </script>
+
+</body>
+
+</html>
